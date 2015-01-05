@@ -31,6 +31,9 @@ nnoremap sp gT
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap <F12> <C-]>
+nnoremap <F11> <C-w><C-]>
+nnoremap bb <C-t>
 
 " syntack
 syntax on
