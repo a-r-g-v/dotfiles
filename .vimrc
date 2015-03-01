@@ -28,12 +28,11 @@ nnoremap sf :<C-u>Unite file<CR>
 nnoremap sF :<C-u>Unite file_mru<CR>
 nnoremap sn gt
 nnoremap sp gT
-nnoremap sq :<C-u>q<CR>
-nnoremap sQ :<C-u>bd<CR>
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 nnoremap <F12> <C-]>
 nnoremap <F11> <C-w><C-]>
 nnoremap bb <C-t>
+nnoremap sq :q<CR>
 
 " syntack
 syntax on
@@ -50,7 +49,9 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'hhvm/vim-hack'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'StanAngeloff/php.vim'
+NeoBundle 'andviro/flake8-vim'
+NeoBundle '5t111111/alt-gtags.vim' 
+NeoBundle 'jimenezrick/vimerl'
 
 call neobundle#end()
 filetype plugin indent on
