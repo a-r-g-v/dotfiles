@@ -8,6 +8,15 @@ PATH=/home/debian/bin/:$PATH
 export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
 export LESS="-iMR"
 export GOPATH=/home/debian/.gopath/
+PATH=$GOPATH/bin/:$PATH
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export GEM_HOME=$HOME/gems
+export GEM_PATH=$GEM_HOME
+export PATH="$GEM_HOME/bin:$PATH"
+DOCKER_HOST='tcp://127.0.0.1:1234'
+setopt nonomatch
+
 
 # 関数
 find-grep () { find . -type f -print | xargs grep -n --binary-files=without-match $@ }
@@ -148,3 +157,12 @@ PROMPT='
 %(?.$.%F{red}$%f) '
 
 
+alias g='git'
+alias -g B='`git branch -a | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"`'
+alias -g R='`git remote | peco --prompt "GIT REMOTE>" | head -n 1`'
+alias -g H='`curl -sL https://api.github.com/users/YOUR_USERNAME/repos | jq -r ".[].full_name" | peco --prompt "GITHUB REPOS>" | head -n 1`'
+alias -g LR='`git branch -a | peco --query "remotes/ " --prompt "GIT REMOTE BRANCH>" | head -n 1 | sed "s/remotes\/[^\/]*\/\(\S*\)/\1 \0/"`'
+
+source /home/debian//cool-peco/cool-peco
+
+PATH=$PATH:/home/debian/010editor;export PATH; # ADDED BY INSTALLER - DO NOT EDIT OR DELETE THIS COMMENT - 87FF8EFC-483D-BCAA-D67D-735CF60410D1 D6E33325-7BF9-D6EA-F7DB-8AB13CA476A1
