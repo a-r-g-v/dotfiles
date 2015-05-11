@@ -42,19 +42,27 @@ set runtimepath+=~/.vim/bundle/neobundle.vim/
 call neobundle#begin(expand('~/.vim/bundle'))
 " FetchList
 NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle has('lua') ? 'Shougo/neocomplete' : 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'hhvm/vim-hack'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'andviro/flake8-vim'
 NeoBundle '5t111111/alt-gtags.vim' 
+NeoBundle 'andviro/flake8-vim'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'scrooloose/nerdtree'
+" erlang
 NeoBundle 'jimenezrick/vimerl'
+" golang
 NeoBundle 'fatih/vim-go'
+" serverspec
+NeoBundle 'glidenote/serverspec-snippets'
+" hack
+NeoBundle 'hhvm/vim-hack'
+
 
 
 call neobundle#end()
@@ -141,6 +149,37 @@ function! MyMode()
 endfunction
 
 
+" neobundle
+
+if neobundle#is_installed('neocomplete')
+    " neocomplete用設定
+    let g:neocomplete#enable_at_startup = 1
+    let g:neocomplete#enable_ignore_case = 1
+    let g:neocomplete#enable_smart_case = 1
+    if !exists('g:neocomplete#keyword_patterns')
+        let g:neocomplete#keyword_patterns = {}
+    endif
+    let g:neocomplete#keyword_patterns._ = '\h\w*'
+elseif neobundle#is_installed('neocomplcache')
+    " neocomplcache用設定
+    let g:neocomplcache_enable_at_startup = 1
+    let g:neocomplcache_enable_ignore_case = 1
+    let g:neocomplcache_enable_smart_case = 1
+    if !exists('g:neocomplcache_keyword_patterns')
+        let g:neocomplcache_keyword_patterns = {}
+    endif
+    let g:neocomplcache_keyword_patterns._ = '\h\w*'
+    let g:neocomplcache_enable_camel_case_completion = 1
+    let g:neocomplcache_enable_underbar_completion = 1
+endif
+
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#snippets_directory = [
+      \'~/.vim/bundle/serverspec-snippets',
+      \'~/.vim/bundle/neosnippet-snippets/neosnippets',
+      \]
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
 
 
 " nerdtree
@@ -159,3 +198,4 @@ if has('syntax')
     augroup END
     call ZenkakuSpace()
 endif
+
