@@ -15,6 +15,9 @@ set expandtab
 set tabstop<
 set softtabstop=2
 set shiftwidth=2
+set incsearch
+set cursorcolumn
+set cursorline
 
 " key
 set backspace=eol,indent
@@ -54,6 +57,7 @@ NeoBundle 'andviro/flake8-vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
 " erlang
 NeoBundle 'jimenezrick/vimerl'
 " golang
@@ -62,6 +66,9 @@ NeoBundle 'fatih/vim-go'
 NeoBundle 'glidenote/serverspec-snippets'
 " hack
 NeoBundle 'hhvm/vim-hack'
+" elixir
+NeoBundle 'elixir-lang/vim-elixir'
+
 
 
 
