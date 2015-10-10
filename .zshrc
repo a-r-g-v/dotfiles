@@ -129,6 +129,7 @@ function vcs_echo {
 if [[ -f ~/.zsh/antigen/antigen.zsh ]]; then
 source ~/.zsh/antigen/antigen.zsh
   antigen bundle mollifier/anyframe 
+  antigen bundle zsh-users/zsh-syntax-highlighting
   antigen apply
 fi
 
