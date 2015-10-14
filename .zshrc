@@ -130,6 +130,7 @@ if [[ -f ~/.zsh/antigen/antigen.zsh ]]; then
 source ~/.zsh/antigen/antigen.zsh
   antigen bundle mollifier/anyframe 
   antigen bundle zsh-users/zsh-syntax-highlighting
+  #antigen-bundle b4b4r07/enhancd
   antigen apply
 fi
 
