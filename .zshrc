@@ -5,6 +5,7 @@
 export LANG=ja_JP.UTF-8
 #export LANG=en_US.UTF-8
 export PATH=$HOME/bin/:$PATH
+export PATH=$HOME/.bin/:$PATH
 export less="-iMR"
 
 # local env
