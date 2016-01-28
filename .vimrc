@@ -59,6 +59,11 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
+
+NeoBundle "sudo.vim"
+NeoBundle "evanmiller/nginx-vim-syntax"
+
+
 " erlang
 NeoBundle 'jimenezrick/vimerl'
 " golang
@@ -69,7 +74,8 @@ NeoBundle 'glidenote/serverspec-snippets'
 NeoBundle 'hhvm/vim-hack'
 " elixir
 NeoBundle 'elixir-lang/vim-elixir'
-
+" cpp
+NeoBundle "rhysd/vim-clang-format"
 
 
 
