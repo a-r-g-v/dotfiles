@@ -1,11 +1,8 @@
 
-# space
-
 # basic env
 export LANG=ja_JP.UTF-8
 #export LANG=en_US.UTF-8
 export PATH=$HOME/bin/:$PATH
-export PATH=$HOME/.bin/:$PATH
 export less="-iMR"
 
 # local env
@@ -15,13 +12,6 @@ export PATH=$GOPATH/bin/:$PATH
 
 ## php
 export PATH=$HOME/.composer/vendor/bin:$PATH
-
-## opt
-export PATH=/opt/bin:$PATH
-export PATH=/opt/mytool:$PATH
-
-
-
 
 
 
@@ -37,13 +27,6 @@ autoload -Uz chpwd_recent_dirs cdr add-zsh-hook && add-zsh-hook chpwd chpwd_rece
 
 # alias
 alias dpandoc='docker run -t -i -v `pwd`:/workspace greyia/pandoc pandoc  -V documentclass=ltjarticle --latex-engine=lualatex'
-
-alias dpandoc_raw='docker run -t -i -v `pwd`:/workspace greyia/pandoc pandoc'
-
-# ref: https://github.com/docker/docker/issues/8755
-function dexec() {
-  docker exec -it $1 script -q -c "/bin/bash" /dev/null;
-}
 
 # zstyle
 zstyle ':completion:*:default' menu select=2
@@ -147,8 +130,12 @@ if [[ -f ~/.zsh/antigen/antigen.zsh ]]; then
 source ~/.zsh/antigen/antigen.zsh
   antigen bundle mollifier/anyframe 
   antigen bundle zsh-users/zsh-syntax-highlighting
-  #antigen-bundle b4b4r07/enhancd
+  antigen bundle zsh-users/zsh-autosuggestions
   antigen apply
 fi
 
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
+ZSH_AUTOSUGGEST_STRATEGY=match_prev_cmd
+bindkey '^ ' autosuggest-accept
 
