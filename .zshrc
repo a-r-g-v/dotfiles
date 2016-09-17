@@ -3,6 +3,7 @@
 export LANG=ja_JP.UTF-8
 #export LANG=en_US.UTF-8
 export PATH=$HOME/bin/:$PATH
+export PATH=$HOME/.bin/:$PATH
 export less="-iMR"
 
 # local env
@@ -138,4 +139,10 @@ fi
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 ZSH_AUTOSUGGEST_STRATEGY=match_prev_cmd
 bindkey '^ ' autosuggest-accept
+
+alias dstat-full='dstat -Tclmdrn'
+alias dstat-mem='dstat -Tclm'
+alias dstat-cpu='dstat -Tclr'
+alias dstat-net='dstat -Tclnd'
+alias dstat-disk='dstat -Tcldr'
 
