@@ -15,6 +15,12 @@ export PATH=$GOPATH/bin/:$PATH
 export PATH=$HOME/.composer/vendor/bin:$PATH
 
 
+# tig
+alias t='tig'
+alias s='tig status'
+alias r='tig refs'
+
+
 
 # load
 zmodload -i zsh/complist
@@ -25,9 +31,6 @@ autoload -Uz vcs_info
 autoload -Uz colors && colors
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook && add-zsh-hook chpwd chpwd_recent_dirs
 
-
-# alias
-alias dpandoc='docker run -t -i -v `pwd`:/workspace greyia/pandoc pandoc  -V documentclass=ltjarticle --latex-engine=lualatex'
 
 # zstyle
 zstyle ':completion:*:default' menu select=2
