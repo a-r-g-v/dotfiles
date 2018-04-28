@@ -61,7 +61,6 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
 
 NeoBundle "sudo.vim"
-NeoBundle "evanmiller/nginx-vim-syntax"
 
 
 " erlang
