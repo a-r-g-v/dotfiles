@@ -54,13 +54,14 @@ NeoBundle 'aquach/vim-http-client'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle '5t111111/alt-gtags.vim' 
-NeoBundle 'andviro/flake8-vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
 
 NeoBundle "sudo.vim"
+NeoBundle 'w0rp/ale'
+
 
 
 " erlang
@@ -211,4 +212,19 @@ if has('syntax')
     augroup END
     call ZenkakuSpace()
 endif
+
+
+
+
+" ale
+
+let g:ale_linters = {
+\   'python': ['mypy', 'isort', 'pylint', 'yapf', 'prospector'],
+\}
+
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_open_list = 1
+let g:ale_keep_list_window_open = 1
+
 
