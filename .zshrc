@@ -6,6 +6,8 @@ export PATH=$HOME/bin/:$PATH
 export PATH=$HOME/.bin/:$PATH
 export less="-iMR"
 
+# homebrew
+PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 # local env
 ## golang
 export GOPATH=$HOME/.gopath/
@@ -51,7 +53,7 @@ PROMPT='
 %(?.$.%F{red}$%f) '
 
 # color
-alias ls="ls --color=auto"
+export CLICOLOR=1
 
 # bindkey
 
@@ -60,10 +62,10 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey '^R' anyframe-widget-execute-history
-bindkey '^E' anyframe-widget-put-history
-bindkey '^A' anyframe-widget-cdr
+#bindkey '^E' anyframe-widget-put-history
+bindkey '^T' anyframe-widget-cdr
 bindkey '^K' anyframe-widget-kill 
-bindkey '^T' anyframe-widget-tmux-attach 
+#bindkey '^T' anyframe-widget-tmux-attach 
 bindkey '^O' anyframe-widget-select-widget
 
 
@@ -148,4 +150,5 @@ alias dstat-mem='dstat -Tclm'
 alias dstat-cpu='dstat -Tclr'
 alias dstat-net='dstat -Tclnd'
 alias dstat-disk='dstat -Tcldr'
+eval "$(direnv hook zsh)"
 
